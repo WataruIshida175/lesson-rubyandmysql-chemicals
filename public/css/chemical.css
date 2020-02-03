@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+a,
+a:hover {
+  color: #FF97C2;
+  text-decoration: none;
+}
+
+h2 {
+  padding: 15px;
+  font-size: 30px;
+}
+
+.container {
+  margin-top: 56px;
+}
+
+body {
+  background-color: #f8f8f7;
+}
+
+#chemical {
+  background-color: white;
+  padding: 20px;
+}
+
+nav {
+  background-color: #1b2023;
+}

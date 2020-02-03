@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+.navbar-brand {
+  text-decoration: none;
+}
+
+.container a,
+.container a:hover {
+  color: #FF97C2;
+  text-decoration: underline;
+}
+
+.container {
+  margin-top: 56px;
+}
+
+body {
+  background-color: #f8f8f7;
+}
+
+#all {
+  background-color: white;
+  padding: 20px;
+}
+
+nav {
+  background-color: #1b2023;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/chemical.css">
+    <title>
+        <% @record.each do |record| %>
+            <%= record['chemical_name'] %>
+                <% end %> | 農業ビジネスネットワーク</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+        <div><a class="navbar-brand" href="/">農業ビジネスネットワーク</a></div>
+        <div><button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#nav-bar"><span class="navbar-toggler-icon"></span></button></div>
+        <div class="collapse navbar-collapse" id="nav-bar">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown"><a href="/" class="nav-link">農薬価格比較</a></li>
+                <li class="nav-item dropdown"><a href="#" class="nav-link">概要</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="chemical">
+            <h2>
+                <% @record.each do |record| %>
+                    <%= record['chemical_name'] %>
+                        <% end %>
+            </h2>
+            <p>市場平均価格：
+                <% @record.each do |record| %>
+                    <%= record['average_price'] %>円/
+                        <%= record['unit'] %>
+                            <% end %>
+            </p>
+            <p>AgriBank価格：
+                <% @record.each do |record| %>
+                    <%= record['agribank_price'] %>円/
+                        <%= record['unit'] %>
+                            <% end %>
+            </p>
+            <p>支払われた価格[
+                <% @record2.each do |record| %>
+                    <%= record['number_of_prices'] %>
+                        <% end %>軒]：
+                            <% @record3.each do |record| %>
+                                <a>
+                                    <%= record['paid_price'] %>, </a>
+                                <% end %>
+            </p>
+            <div id='myGraph'></div>
+            <p><a href="/">商品一覧</a></p>
+        </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS, then Font Awesome -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
+    <script type="text/javascript" src="/js/chemical.js"></script>
+
+</body>
+
+</html>
